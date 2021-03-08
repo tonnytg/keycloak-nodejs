@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+  webserver.com.br:
+    build: 
+      context: webserver
+    container_name: webserver
+    networks: 
+      - keynet
+    tty: true
+
+  
+  keycloak.com.br:
+    build: 
+      context: keycloak
+    container_name: keycloak
+    networks: 
+      - keynet
+    volumes: 
+      - ./keycloak/data:/opt/jboss/keycloak/standalone/data/
+    tty: true
+
+
+  nginx.com.br:
+    build: 
+      context: nginx
+    container_name: nginx
+    networks: 
+      - keynet
+    tty: true
+    ports: 
+      - "80:80"
+
+networks: 
+  keynet:
+    driver: bridge
