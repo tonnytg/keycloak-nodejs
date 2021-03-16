@@ -24,7 +24,7 @@ login:`admin`<br/>
 senha `admin`<br/>
 
 1. Clique no Realm >> ADD 
-2. Importe o arquivo: `keyclaok-import.json`<br/>
+2. Importe o arquivo: `keycloak-import.json`<br/>
 
 Depois de importar o arquivo JSON que tem os dados do cliente para o NodeJS usar
 
